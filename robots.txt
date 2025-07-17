@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://albanPi.github.io/al-folio/sitemap.xml
+Sitemap: https://albanPi.github.io/sitemap.xml
