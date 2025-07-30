@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Labor Omnia Vincit Improbus, Georgic, Virgil
+subtitle: Labor Omnia Vincit Improbus, Georgics, Virgil
 
 profile:
   align: left
