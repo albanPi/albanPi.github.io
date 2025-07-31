@@ -1,6 +1,6 @@
 ---
-layout: about
-title: about
+layout: About
+title: About
 permalink: /
 subtitle: Labor Omnia Vincit Improbus, Georgics, Virgil
 
