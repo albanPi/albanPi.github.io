@@ -1,14 +1,9 @@
 github_users:
-  - torvalds
-  - alshedivat
-
+  - albanPi
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - albanPi/benchmark_inverse_problem
+  - albanPi/benchmark_classification_drago
+  - albanPi/pulsar_stars_prediction
+  - albanPi/algorithm_findor
