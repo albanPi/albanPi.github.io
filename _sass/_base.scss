@@ -1100,18 +1100,19 @@ nav[data-toggle="toc"] {
     height: 2px; // thickness of underline
     background: var(--global-hover-color); // uses your hover color variable
     transition: width 0.3s cubic-bezier(.4,0,.2,1);
-  }
+    }
 
   &:hover,
   &:focus,
   &.active {
     background: var(--global-navbar-hover-bg, #f0f0f0); // fallback if variable isn’t set
-  }
+    }
 
   &:hover::after,
   &:focus::after,
   &.active::after {
     width: 100%;
+    }
   }
 }
 
