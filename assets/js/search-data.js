@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "books-the-godfather",
+        },{id: "post-mri-reconstruction-project",
+        
+          title: "MRI Reconstruction project",
+        
+        description: "MRI reconstruction using NUDFT &amp; PnP",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/tipe/";
+          
+        },
+      },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
