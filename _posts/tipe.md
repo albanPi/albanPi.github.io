@@ -1,0 +1,11 @@
+---
+layout: post
+title: MRI Reconstruction project
+date: 2025-08-18
+description: MRI reconstruction using NUDFT & PnP
+tags: MRI NUDFT PnP Compress-Sensing
+categories: MRI-Reconstruction
+featured: true
+---
+
+More coming soon.
