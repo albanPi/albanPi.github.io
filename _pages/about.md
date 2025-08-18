@@ -6,7 +6,7 @@ subtitle: Labor Omnia Vincit Improbus, Georgics, Virgil
 
 profile:
   align: left
-  image: prof_pic.jpg
+  image: pdp_website.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>Taken at Saint-Raphaël, France :)</p>
@@ -25,8 +25,13 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Student in the apprenticeship program [IPSI](https://www.telecom-st-etienne.fr/en/courses/engineering/telecom-saint-etienne-engineer-under-apprentice-status/image-and-photonics-for-the-smart-industry/) at Télécom Saint-Étienne and machine vision engineer apprentice for Dior Beauty.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Since it is my **personal** website, the content within do not express the company's opinions I work for.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Here is a quick overview of my website :
+- [Blog](https://albanpi.github.io/blog/) page is my BlogPost.
+- [Project](https://albanpi.github.io/projects/) page gathers the projects I'm involved in either it is computer science or enginneering.
+- [Repositories](https://albanpi.github.io/repositories/) page gives a quick overview of my GitHub profile and my main repos.
+- [CV](https://albanpi.github.io/cv/) page is where you can find my résumé in english :uk:.
+- [Teaching](https://albanpi.github.io/teaching/) page hosts my teaching materials.
