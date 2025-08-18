@@ -1080,27 +1080,9 @@ nav[data-toggle="toc"] {
     color: var(--global-text-color);
     font-size: 0.75rem;
 
-    &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px; // thickness of underline
-    background: var(--global-hover-color); // uses your hover color variable
-    transition: width 0.3s cubic-bezier(.4,0,.2,1);
-    }
-
-  &:hover,
-  &:focus,
-  &.active {
-    background: var(--global-navbar-hover-bg, #f0f0f0); // fallback if variable isn’t set
-    }
-
-  &:hover::after,
-  &:focus::after,
-  &.active::after {
-    width: 100%;
+    &:hover {
+      color: var(--global-hover-color);
+      border-left-color: var(--global-hover-color);
     }
   }
 
@@ -1110,27 +1092,9 @@ nav[data-toggle="toc"] {
     border-left-color: var(--global-theme-color);
     font-size: 0.75rem;
 
-    &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px; // thickness of underline
-    background: var(--global-hover-color); // uses your hover color variable
-    transition: width 0.3s cubic-bezier(.4,0,.2,1);
-    }
-
-  &:hover,
-  &:focus,
-  &.active {
-    background: var(--global-navbar-hover-bg, #f0f0f0); // fallback if variable isn’t set
-    }
-
-  &:hover::after,
-  &:focus::after,
-  &.active::after {
-    width: 100%;
+    &:hover {
+      color: var(--global-hover-color);
+      border-left-color: var(--global-hover-color);
     }
   }
 }
