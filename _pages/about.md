@@ -29,9 +29,4 @@ Student in the apprenticeship program [IPSI](https://www.telecom-st-etienne.fr/e
 
 Since it is my **personal** website, the content within do not express the company's opinions I work for.
 
-Here is a quick overview of my website :
-- [Blog](https://albanpi.github.io/blog/) page is my BlogPost.
-- [Project](https://albanpi.github.io/projects/) page gathers the projects I'm involved in either it is computer science or enginneering.
-- [Repositories](https://albanpi.github.io/repositories/) page gives a quick overview of my GitHub profile and my main repos.
-- [CV](https://albanpi.github.io/cv/) page is where you can find my résumé in english :uk:.
-- [Teaching](https://albanpi.github.io/teaching/) page hosts my teaching materials.
+Here is a quick overview of my website : [Blog](https://albanpi.github.io/blog/) page is my BlogPost, [Project](https://albanpi.github.io/projects/) page gathers the projects I'm involved in either it is computer science or enginneering, [Repositories](https://albanpi.github.io/repositories/) page gives a quick overview of my GitHub profile and my main repos, [CV](https://albanpi.github.io/cv/) page is where you can find my résumé in english :uk: and [Teaching](https://albanpi.github.io/teaching/) page hosts my teaching materials.
