@@ -25,7 +25,7 @@
   "work": [
     {
       "name": "Dior Beauty",
-      "location": "Saint-Jean-de-Braye, France",
+      "location": "Orléans, France",
       "position": "Machine vision engineer apprentice",
       "startDate": "2025-09-01",
       "endDate": "2028-08-31",
@@ -35,13 +35,21 @@
   ],
   "education": [
     {
+      "institution": "Télécom Saint-Étienne",
+      "location": "Saint-Étienne, France",
+      "area": "Image and Photonics, for the Smart-Industry",
+      "startDate": "2025-09-01",
+      "endDate": "2028-08-31"
+
+    },
+    {
       "institution": "Henri Poincaré High School",
       "location": "Nancy, France",
       "area": "Mathematics, Physics, Computer Science",
       "studyType": "French classes préparatoires",
       "startDate": "2023-09-04",
       "endDate": "2025-06-20",
-      "summary": "In the pathway MP2I - MPI for preparing entrance in best French schools and universities via highly competitive exams."
+      "highlights": ["In the pathway MP2I - MPI for preparing entrance in best French schools and universities via highly competitive exams."]
     },
     {
       "institution": "Paris-Dauphine University",
@@ -59,13 +67,13 @@
       "studyType": "High School",
       "startDate": "2019-09-02",
       "endDate": "2022-07-05",
-      "summary": "Highest honours"
+      "highlights": ["Highest honours"]
     }
 
   ],
   "certificates": [
     {
-      "name": "Bret d'Initiation Aéronautique",
+      "name": "Brevet d'Initiation Aéronautique",
       "date": "2020-09-30",
       "issuer": "Ministère de l’Education Nationale",
       "icon": "fa-solid fa-location-dot"
@@ -114,7 +122,7 @@
   "interests": [
     {
       "name": "Medical Imaging",
-      "icon": "fa-solid fa-tag",
+      "icon": "fa-solid fa-hashtag",
       "keywords": [
         "MRI reconstruction",
         "DFT/NUDFT",
