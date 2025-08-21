@@ -258,11 +258,6 @@ ul.task-list input[type="checkbox"] {
     color: var(--global-text-color);
   }
 
-  a:hover {
-    color: var(--global-hover-color);
-    background-color: var(--global-navbar-hover-bg);
-    transition: background 0.3s cubic-bezier(.4,0,.2,1);
-  }
 
   .dropdown-divider {
     border-top: 1px solid var(--global-divider-color) !important;
@@ -294,6 +289,8 @@ ul.task-list input[type="checkbox"] {
 
     &:hover {
       color: var(--global-hover-color);
+      background-color: var(--global-navbar-hover-bg);
+      transition: background 0.3s cubic-bezier(.4,0,.2,1);
     }
   }
 
@@ -304,6 +301,8 @@ ul.task-list input[type="checkbox"] {
 
     &:hover {
       color: var(--global-hover-color);
+      background-color: var(--global-navbar-hover-bg);
+     transition: background 0.3s cubic-bezier(.4,0,.2,1);
     }
   }
 
