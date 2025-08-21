@@ -22,7 +22,7 @@ announcements:
 latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 5 # leave blank to include all the blog posts
 ---
 
 Student in the apprenticeship program [IPSI](https://www.telecom-st-etienne.fr/en/courses/engineering/telecom-saint-etienne-engineer-under-apprentice-status/image-and-photonics-for-the-smart-industry/) at Télécom Saint-Étienne and machine vision engineer apprentice for Dior Beauty.
