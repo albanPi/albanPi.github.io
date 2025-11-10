@@ -129,6 +129,16 @@
         "PnP Methods",
         "Compress sensing"
       ]
+    },
+    {
+      "name": "Science",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Optimization",
+        "Inverse problems",
+        "Photonics",
+        "Machine Vision"
+      ]
     }
   ],
   "projects": [

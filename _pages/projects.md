@@ -2,10 +2,10 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: Dedicated to my projects and other projects I want to indroduce to you.
+description: Dedicated to projects I follow closely and mines.
 nav: true
 nav_order: 3
-display_categories: [My projects, Presenting projects]
+display_categories: [Followed projects, Work in progress]
 horizontal: false
 ---
 
