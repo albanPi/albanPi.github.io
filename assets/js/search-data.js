@@ -73,9 +73,9 @@ ninja.data = [{
           description: "Python Torch-based package for inverse problems",
           section: "Projects",handler: () => {
               window.location.href = "/projects/deepinv/";
-            },},{id: "projects-irm-reconstruction-project",
-          title: 'IRM Reconstruction project',
-          description: "",
+            },},{id: "projects-mri-reconstruction-project",
+          title: 'MRI Reconstruction project',
+          description: "Soon",
           section: "Projects",handler: () => {
               window.location.href = "/projects/tipe/";
             },},{
