@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "Dedicated to my projects and other projects I want to indroduce to you.",
+          description: "Dedicated to projects I follow closely and mines.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -63,7 +63,22 @@ ninja.data = [{
             },},{id: "news-website-under-construction-smile",
           title: 'Website under construction :smile:.',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "projects-benchopt",
+          title: 'Benchopt',
+          description: "Benchmarks for ML algorithms",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/benchopt/";
+            },},{id: "projects-deepinverse",
+          title: 'DeepInverse',
+          description: "Python Torch-based package for inverse problems",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/deepinv/";
+            },},{id: "projects-irm-reconstruction-project",
+          title: 'IRM Reconstruction project',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/tipe/";
+            },},{
         id: 'social-github',
         title: 'GitHub',
         section: 'Socials',
