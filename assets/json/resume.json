@@ -6,7 +6,7 @@
     "email": "",
     "phone": "",
     "url": "",
-    "summary": "Student in photonics and computer vision applied to the industry. Apprentice for Dior Beauty.",
+    "summary": "Student in photonics and machine vision. Apprentice for Dior Beauty.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -29,8 +29,22 @@
       "position": "Machine vision engineer apprentice",
       "startDate": "2025-09-01",
       "endDate": "2028-08-31",
-      "summary": "Doing some machine vision stuff.",
-      "highlights": ["Machine vison", "Photonics"]
+      "summary": "Deployement and improvement of machine vision systems for production.",
+      "highlights": ["Handling various equipments (Keyence, Cognex, Omron, proprietary)", 
+      "Continual improvement for vision systems",
+      "Giving training courses on vision programs",
+      "Creation of internal documentation"]
+    },
+    {
+      "name": "Inria Saclay, MIND Team",
+      "location": "Palaiseau, France",
+      "position": "Research intership (Thomas Moreau supervision)",
+      "startDate": "2023-05-16",
+      "endDate": "2023-06-22",
+      "summary": "Discovering statiscal learning research with medical applications",
+      "highlights": ["Improvement of a Benchopt classification benchark",
+      "Getting familiar with Benchopt and Optuna",
+      "Reading and comprehension of NeurIPS paper"]
     }
   ],
   "education": [
@@ -49,6 +63,7 @@
       "studyType": "French classes préparatoires",
       "startDate": "2023-09-04",
       "endDate": "2025-06-20",
+      "summary": "High intensive courses for entrance to France best engineering schools",
       "highlights": ["In the pathway MP2I - MPI for preparing entrance in best French schools and universities via highly competitive exams."]
     },
     {
@@ -146,7 +161,8 @@
       "name": "TIPE",
       "summary": "The TIPE is an oral exam part from the highly competitive exams done after French classes préparatoires",
       "highlights": ["MRI reconstruction", "NUDFT"],
-      "startDate": "2024-02-01"
+      "startDate": "2024-02-01",
+      "endDate": "2025-06-06"
     }
   ]
 }
