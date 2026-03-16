@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+   
+    <style>body { margin: 0; padding: 0; }
+    /* --- STYLE DES BOUTONS --- */
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100; /* Au-dessus du graphique */
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #444;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+        }
+        .btn:hover { background-color: #eee; }
+        .btn:active { background-color: #ddd; }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="btn" onclick="startAnimation()">▶ Play</button>
+        <button class="btn" onclick="pauseAnimation()">⏸ Pause</button>
+    </div>
+    <div id="myDiv" style="width:100%;height:100vh;"></div>
+    <script>
+        // Parameters
+        const r = 1;        
+        const theta = Math.PI / 4; 
+        const N = 50;       
+        const headRatio = 0.2; 
+        const shaftRatio = 1 - headRatio; 
+
+        const labelDist = 0.1;  
+
+        // PARAMÈTRES DE L'ANIMATION
+        const frameDuration = 35; // Vitesse de rotation (ms par image)
+        const pauseDuration = 1000; // Pause entre les tours (ms) - ICI POUR CHANGER LE TEMPS DE PAUSE
+
+        // --- VARIABLES DE CONTRÔLE ---
+        let isPlaying = true; // État initial
+        let timer = null;     // Référence pour annuler le setTimeout
+        
+        // --- Initial Calculations ---
+        let x_tip_init = r * Math.sin(theta) * Math.cos(0);
+        let y_tip_init = r * Math.sin(theta) * Math.sin(0);
+        let z_tip_init = r * Math.cos(theta);
+
+        // 1. Nucleus (Now Starts at Midpoint)
+        const nucleus = {
+            x: [x_tip_init / 2], 
+            y: [y_tip_init / 2], 
+            z: [z_tip_init / 2],
+            legendgroup: 'groupe1',
+            mode: 'markers',
+            marker: { size: 15, color: '#D1FFFF', symbol: 'circle',
+                line: { color: 'black', width: 2} },
+            type: 'scatter3d',
+            name: 'Noyau'
+        };
+
+        // 2. Vertical Axis (Z-axis)
+        const axisLine = {
+            x: [0, 0],
+            y: [0, 0],
+            z: [0, 0.8],
+            legendgroup: 'groupe2',
+            mode: 'lines',
+            line: { color: 'black', width: 10 },
+            type: 'scatter3d',
+            name: '$\\vec{\\Omega_{0}}$'
+        };
+
+        const axisCone = {
+            x: [0], y: [0], z: [1],
+            u: [0], v: [0], w: [1],
+            type: 'cone',
+            colorscale: [[0, 'black'], [1, 'black']],
+            showscale: false,
+            sizemode: 'scaled',
+            sizeref: 0.25,
+            anchor: 'tip', 
+            name: 'test'
+        };
+
+        // 3. Precession Trajectory (Dotted Circle)
+        let circX = [], circY = [], circZ = [];
+        for (let i = 0; i <= 100; i++) {
+            let t = (i / 100) * 2 * Math.PI;
+            circX.push(r * Math.sin(theta) * Math.cos(t));
+            circY.push(r * Math.sin(theta) * Math.sin(t));
+            circZ.push(r * Math.cos(theta)); 
+        }
+        const trajectory = {
+            x: circX, y: circY, z: circZ,
+            mode: 'lines',
+            line: { color: 'green', width: 4, dash: 'dot' },
+            type: 'scatter3d',
+            name: 'Trajectoire'
+        };
+
+        // 4. The Vector Shaft
+        const vectorShaft = {
+            x: [0, x_tip_init * shaftRatio], 
+            y: [0, y_tip_init * shaftRatio], 
+            z: [0, z_tip_init * shaftRatio],
+            mode: 'lines',
+            line: { color: 'red', width: 10 },
+            type: 'scatter3d',
+            name: '$\\vec{u}$'
+        };
+
+        // 5. The Vector Arrowhead
+        const vectorArrowhead = {
+            x: [x_tip_init], y: [y_tip_init], z: [z_tip_init],
+            u: [x_tip_init], v: [y_tip_init], w: [z_tip_init],
+            type: 'cone',
+            colorscale: [[0, 'red'], [1, 'red']],
+            showscale: false,
+            sizemode: 'scaled',
+            sizeref: 0.25,
+            anchor: 'tip', 
+            name: 'Spin (Pointe)'
+        };
+
+
+        // --- Layout ---
+        const layout = {
+            title: 'Mouvement de précession',
+            scene: {
+                xaxis: {range: [-1, 1], showgrid: false, zeroline: false, showticklabels: false, title: ''},
+                yaxis: {range: [-1, 1], showgrid: false, zeroline: false, showticklabels: false, title: ''},
+                zaxis: {range: [0, 1.2], showgrid: false, zeroline: false, showticklabels: false, title: ''},
+                aspectmode: 'cube',
+                camera: {
+                    eye: {
+                        x: 0.6,
+                        y: 0.6,
+                        z: 0.4
+                    }
+                },
+                // annotations: [{
+                //     x: x_tip_init + (x_tip_init * labelDist),
+                //     y: y_tip_init + (y_tip_init * labelDist),
+                //     z: z_tip_init + 0.1,
+                //     text: '$\\vec{S}$',
+                //     showarrow: false,
+                //     font: { size: 24, color: 'black' },
+                //     xanchor: 'left', yanchor: 'bottom'
+                // }]
+            },
+            // updatemenus: [{
+            //     type: 'buttons',
+            //     showactive: false,
+            //     buttons: [{
+            //         label: 'Play',
+            //         method: 'animate',
+            //         args: [null, { frame: {duration: 50, redraw: true}, fromcurrent: true, transition: {duration: 0} }]
+            //     }]
+            // }]
+        };
+
+        // --- Frames for Animation ---
+        let frames = [];
+        let frameNames = [];
+        for (let i = 0; i < N; i++) {
+            let t = (i / N) * 2 * Math.PI;
+            
+            let x_tip = r * Math.sin(theta) * Math.cos(t);
+            let y_tip = r * Math.sin(theta) * Math.sin(t);
+            let z_tip = r * Math.cos(theta);
+
+            let frameName = i.toString();
+            frameNames.push(frameName);
+
+            frames.push({
+                name: frameName,
+                data: [
+                    { // Trace 0: Nucleus (Moving to midpoint)
+                        x: [x_tip / 2],
+                        y: [y_tip / 2],
+                        z: [z_tip / 2]
+                    },
+                    axisLine,
+                    axisCone,    
+                    trajectory, 
+                    { // Trace 3: Shaft
+                        x: [0, x_tip * shaftRatio],
+                        y: [0, y_tip * shaftRatio],
+                        z: [0, z_tip * shaftRatio]
+                    },
+                    { // Trace 4: Arrowhead
+                        x: [x_tip],
+                        y: [y_tip],
+                        z: [z_tip],
+                        u: [x_tip], 
+                        v: [y_tip],
+                        w: [z_tip]
+                    },
+
+                ],
+                // layout: {
+                //     scene: {
+                //         annotations: [{
+                //             x: x_tip + (x_tip * labelDist),
+                //             y: y_tip + (y_tip * labelDist),
+                //             z: z_tip + 0.1,
+                //             text: '$\\vec{S}$',
+                //             showarrow: false,
+                //             font: { size: 24, color: 'black' }
+                //         }]
+                //     }
+                // }
+            });
+        }
+
+        function startAnimationLoop() {
+            if (!isPlaying) return;
+            // Lance l'animation de la frame 0 à N
+            Plotly.animate('myDiv', frameNames, {
+                frame: { duration: frameDuration, redraw: true },
+                transition: { duration: 0 },
+                mode: 'immediate',
+                fromcurrent: true // Important pour la fluidité
+            }).then(function() {
+                // Ce bloc s'exécute quand l'animation est FINIE
+                // On attend 'pauseDuration' millisecondes
+                if (isPlaying) {
+                    // On attend avant de relancer
+                    timer = setTimeout(startAnimationLoop, pauseDuration);
+                }
+            });
+        }
+
+        function startAnimation() {
+            if (isPlaying) return; // Déjà en cours
+            
+            isPlaying = true;
+            startAnimationLoop(); // On lance la boucle
+        }
+
+        function pauseAnimation() {
+            isPlaying = false;
+            
+            // 1. On annule le compte à rebours s'il est actif (pendant la pause de 1s)
+            if (timer) clearTimeout(timer);
+
+            // 2. On fige l'animation Plotly immédiatement
+            Plotly.animate('myDiv', [], {mode: 'immediate'});
+        }
+
+        Plotly.newPlot('myDiv', [
+            nucleus, axisLine, axisCone, trajectory, vectorShaft, vectorArrowhead,
+        ],
+        layout,
+        {mathjax: 'cdn'}
+    ).then(function() {
+            Plotly.addFrames('myDiv', frames);
+            startAnimationLoop();
+        });
+
+    </script>
+</body>
+</html>

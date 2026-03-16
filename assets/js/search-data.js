@@ -44,11 +44,11 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-mri-reconstruction-project",
+        },{id: "post-sujet-de-tipe-irm",
         
-          title: "MRI Reconstruction project",
+          title: "Sujet de TIPE - IRM",
         
-        description: "MRI reconstruction using NUDFT &amp; PnP",
+        description: "Fonctionnement de l&#39;IRM - des atomes à la construction d&#39;images.",
         section: "Posts",
         handler: () => {
           
@@ -63,7 +63,15 @@ ninja.data = [{
             },},{id: "news-website-under-construction-smile",
           title: 'Website under construction :smile:.',
           description: "",
-          section: "News",},{id: "projects-benchopt",
+          section: "News",},{id: "news-tipe-article-in-french-is-now-available",
+          title: 'TIPE article (in French) is now available !',
+          description: "",
+          section: "News",},{id: "projects-mri-reconstruction-project",
+          title: 'MRI Reconstruction project',
+          description: "Soon",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/benchmark_tipe/";
+            },},{id: "projects-benchopt",
           title: 'Benchopt',
           description: "Benchmarks for ML algorithms",
           section: "Projects",handler: () => {
