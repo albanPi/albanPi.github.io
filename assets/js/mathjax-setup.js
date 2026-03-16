@@ -5,6 +5,9 @@ window.MathJax = {
       ["$", "$"],
       ["\\(", "\\)"],
     ],
+    autoload: {
+      cases: [[], ['numcases', 'subnumcases']]
+    },
   },
   options: {
     renderActions: {
