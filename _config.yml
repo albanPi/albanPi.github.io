@@ -200,6 +200,7 @@ exclude:
   - _projects/7_project.md
   - _projects/8_project.md
   - _projects/9_project.md
+  - _projects/benchmark_tipe.md
 keep_files:
   - CNAME
   - .nojekyll
