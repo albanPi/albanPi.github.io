@@ -66,12 +66,7 @@ ninja.data = [{
           section: "News",},{id: "news-tipe-article-in-french-is-now-available",
           title: 'TIPE article (in French) is now available !',
           description: "",
-          section: "News",},{id: "projects-mri-reconstruction-project",
-          title: 'MRI Reconstruction project',
-          description: "Soon",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/benchmark_tipe/";
-            },},{id: "projects-benchopt",
+          section: "News",},{id: "projects-benchopt",
           title: 'Benchopt',
           description: "Benchmarks for ML algorithms",
           section: "Projects",handler: () => {
