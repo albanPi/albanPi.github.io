@@ -141,10 +141,11 @@
         // --- Layout ---
         const layout = {
             title: 'Mouvement de précession',
+            margin: { l: 0, r: 0, b: 0, t: 40 },
             scene: {
-                xaxis: {range: [-1, 1], showgrid: false, zeroline: false, showticklabels: false, title: ''},
-                yaxis: {range: [-1, 1], showgrid: false, zeroline: false, showticklabels: false, title: ''},
-                zaxis: {range: [0, 1.2], showgrid: false, zeroline: false, showticklabels: false, title: ''},
+                xaxis: {range: [-1, 1], showgrid: false, zeroline: false, showticklabels: false, title: '', visible: false},
+                yaxis: {range: [-1, 1], showgrid: false, zeroline: false, showticklabels: false, title: '', visible: false},
+                zaxis: {range: [0, 1.2], showgrid: false, zeroline: false, showticklabels: false, title: '', visible: false},
                 aspectmode: 'cube',
                 camera: {
                     eye: {
